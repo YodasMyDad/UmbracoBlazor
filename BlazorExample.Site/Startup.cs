@@ -73,8 +73,8 @@ namespace BlazorExample.Site
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });
-            
-            app.UseBlazorFrameworkFiles("/umbraco");
+
+            app.UseBlazorFrameworkFiles();
         }
     }
 }
