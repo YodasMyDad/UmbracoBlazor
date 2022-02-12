@@ -1,12 +1,13 @@
 ﻿using System.Linq;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Actions;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace BlazorExample.Site.Controllers;
+namespace BlazorExample.Site.Controllers.Api;
 
-public class UtilitiesApiController  : UmbracoApiController
+public class UtilitiesApiController  : ControllerBase
 {
     private readonly IUmbracoContextAccessor _umbracoContextAccessor;
 
@@ -16,7 +17,7 @@ public class UtilitiesApiController  : UmbracoApiController
     }
     
     [HttpGet]
-    // Umbraco/Api/UtilitiesApi/GetSiteName
+    [Route("/Api/UtilitiesApi/GetSiteName")]
     public string GetSiteName()
     {
         _umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
@@ -25,4 +26,12 @@ public class UtilitiesApiController  : UmbracoApiController
         var websiteModel = website as Website;
         return websiteModel.WebsiteName;
     }
+
+    [HttpGet]
+    [Route("umbraco/_framework/{path}")]
+    public IActionResult GetBlazorFiles([FromRoute]string path)
+    {
+        return Redirect($"{Request.Scheme}://{Request.Host}/_framework/{path}");
+    }
+
 }

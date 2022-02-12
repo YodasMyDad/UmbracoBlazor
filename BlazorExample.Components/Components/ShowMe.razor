@@ -18,6 +18,10 @@
     protected override void OnInitialized()
     {
         BaseUri = NavigationManager.BaseUri;
+        if (BaseUri.Contains("umbraco"))
+        {
+            BaseUri = BaseUri.Replace("umbraco/", string.Empty);
+        }
         Text = "I'm a Blazor custom element, loading text from OnInitialized() running inside an Umbraco project, styled by Tailwind CSS!";
     }
 
