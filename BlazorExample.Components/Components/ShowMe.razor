@@ -1,0 +1,29 @@
+﻿<p>@Text</p>
+ <p>
+     <button type="button" @onclick="GetWebsiteName" class="tw-mt-3 tw-w-full tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-shadow-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">
+         Click To Get Website Name
+     </button>
+ </p>
+ <p>@WebsiteName</p>
+
+ @code {
+     
+     [Inject] public HttpClient HttpClient { get; set; }
+     [Inject] public NavigationManager NavigationManager { get; set; }
+     
+    private string Text { get; set; } = "Hello";
+    private string WebsiteName { get; set; }
+    private string BaseUri { get; set; }
+     
+    protected override void OnInitialized()
+    {
+        BaseUri = NavigationManager.BaseUri;
+        Text = "I'm a Blazor custom element, loading text from OnInitialized() running inside an Umbraco project, styled by Tailwind CSS!";
+    }
+
+    private async Task GetWebsiteName()
+    {
+        WebsiteName = await HttpClient.GetStringAsync($"{BaseUri}Api/UtilitiesApi/GetSiteName");
+        //Something = await HttpClient.GetFromJsonAsync<List<Whatever>>($"{BaseUri}Api/UtilitiesApi/GetObjects");
+    }
+}

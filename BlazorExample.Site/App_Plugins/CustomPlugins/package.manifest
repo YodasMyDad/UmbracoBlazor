@@ -1,0 +1,21 @@
+﻿{
+    "dashboards":  [
+        {
+            "alias": "UtilityDashboard",
+            "view":  "~/App_Plugins/CustomPlugins/Dashboards/utilitydashboard.html",
+            "sections":  [ "content" ],
+            "weight": -10,
+            "access": [
+                { "grant": "admin" }
+            ]
+        }
+    ],
+    "javascript": [
+        "~/App_Plugins/CustomPlugins/Dashboards/dashboard.js",
+        "~/_content/Microsoft.AspNetCore.Components.CustomElements/BlazorCustomElements.js",
+        "~/umbraco/_framework/blazor.webassembly.js"
+    ],
+    "css": [
+        "~/App_Plugins/CustomPlugins/styles.min.css"
+    ]
+ }
