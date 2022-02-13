@@ -14,53 +14,54 @@
     <title>Blazor Example</title>
     <link href="~/css/styles.css" rel="stylesheet"/>
     <link href="~/App_Plugins/CustomPlugins/styles.min.css" rel="stylesheet"/>
-    <script src="~/_content/Microsoft.AspNetCore.Components.CustomElements/BlazorCustomElements.js"></script>
-    <script src="~/_framework/blazor.webassembly.js"></script>
 </head>
 
 <body>
 
 <div class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
-  <div class="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
-    <div class="max-w-md mx-auto">
-      <div class="divide-y divide-gray-300/50">
-          <div class="py-8 text-base leading-7 space-y-6 text-gray-600">
-              <p>Example Umbraco 9 site showing the following features:</p> 
-              <ul class="space-y-4">
-                  <li class="flex items-center">
-                      <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="12" cy="12" r="11" />
-                          <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                      </svg>
-                      <p class="ml-4">
-                          Blazor in the back office, running in a dashboard. Project structure shows setup of how to get Blazor WASM hosted in same site as Umbraco 
-                      </p>
-                  </li>
-                  <li class="flex items-center">
-                      <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="12" cy="12" r="11" />
-                          <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                      </svg>
-                      <p class="ml-4">
-                          Tailwind Css running in the front end and also using Tailwind Css for the Umbraco backoffice dashboard. Using prefixes so it doesn't clash with the umbraco styles.
-                      </p>
-                  </li>
-              </ul>
-              <p>Please make sure you read the ReadMe file which outlines the current issues with Blazor. The back office login details are</p>
-              <p>admin@admin.com</p>
-              <p>1234567890</p>
-          </div>
-          <div class="tw-py-6 tw-flex tw-flex-col tw-justify-center tw-relative tw-overflow-hidden sm:tw-py-12">
-              <div class="tw-relative tw-px-6 tw-pt-10 tw-pb-8 tw-bg-white tw-shadow-xl tw-ring-1 tw-ring-gray-900/5 sm:tw-max-w-lg sm:tw-mx-auto sm:tw-rounded-lg sm:tw-px-10">
-                  <div class="tw-max-w-md tw-mx-auto">
-                      <show-me></show-me>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
+        <div class="max-w-md mx-auto">
+            <div class="divide-y divide-gray-300/50">
+                <div class="py-8 text-base leading-7 space-y-6 text-gray-600">
+                    <p>Example Umbraco 9 site showing the following features:</p> 
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="11" />
+                                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                            </svg>
+                            <p class="ml-4">
+                                Blazor in the back office, running in a dashboard. Project structure shows setup of how to get Blazor WASM hosted in same site as Umbraco 
+                            </p>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="11" />
+                                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                            </svg>
+                            <p class="ml-4">
+                                Tailwind Css running in the front end and also using Tailwind Css for the Umbraco backoffice dashboard. Using prefixes so it doesn't clash with the umbraco styles.
+                            </p>
+                        </li>
+                    </ul>
+                    <p>Please make sure you read the ReadMe file which outlines the current issues with Blazor. The back office login details are</p>
+                    <p>admin@admin.com</p>
+                    <p>1234567890</p>
+                </div>
+                <div class="tw-py-6 tw-flex tw-flex-col tw-justify-center tw-relative tw-overflow-hidden sm:tw-py-12">
+                    <div class="tw-relative tw-px-6 tw-pt-10 tw-pb-8 tw-bg-white tw-shadow-xl tw-ring-1 tw-ring-gray-900/5 sm:tw-max-w-lg sm:tw-mx-auto sm:tw-rounded-lg sm:tw-px-10">
+                        <div class="tw-max-w-md tw-mx-auto">
+                            <show-me></show-me>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
+    <script src="~/_content/Microsoft.AspNetCore.Components.CustomElements/BlazorCustomElements.js"></script>
+    <script src="~/_framework/blazor.webassembly.js"></script>
 </body>
 </html>
 

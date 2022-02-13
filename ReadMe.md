@@ -15,17 +15,14 @@ Just run the site and login to the back office using the below credentials
 admin@admin.com  
 1234567890
 
+## Work Arounds
+
+Because the Blazor.Webassembly.js relies on the base url to fetch the blazor.boot.json file, which will contain the /umbraco/ url when called from the back-office, the only way to get it working would be to have it fully configured to work from the Frontend first, and then have an additional controller redirecting the /umbraco/_framework/* files back to the original frontend url so that every file can be fetched!
+
+However, this is working fine for now.
+
+[Read more here](https://github.com/dotnet/aspnetcore/issues/22220)
+
 ## Current Problems
 
-The biggest issue I had to get Blazor running, is the Umbraco back office uses a base tag in the HTML like so.
-
-`<base href="/umbraco/" />`
-
-This completely screws loading Blazor as it expects the base to be the root of the app `"/"`. To get around this, you have to set the base of Blazor to /umbraco/ a couple of ways.
-
-1) Setting `app.UseBlazorFrameworkFiles("/umbraco");` in the .Site `Startup.cs`
-2) Add the following to the Blazor project .csproj file. `<StaticWebAssetBasePath>umbraco</StaticWebAssetBasePath>`
-
-However, while this now fixes the backoffice. It means you cannot use Blazor on the front end of your site. Because it's expected a base of /umbraco/ to load the Blazor boot Json file. This is where I am stuck and looking for help from someone smarter than me. Because the beauty of Blazor will be using it front and back end!
-
-Lastly. This may be a Rider IDE thing or because I'm using Custom Elements. But you can't debug the Blazor files like you would normally in your IDE. Again, looking to the community to help figure it out.
+This may be a Rider IDE thing or because I'm using Custom Elements. But you can't debug the Blazor files like you would normally in your IDE. Again, looking to the community to help figure it out.
