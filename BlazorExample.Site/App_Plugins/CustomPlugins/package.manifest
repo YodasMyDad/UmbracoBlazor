@@ -17,5 +17,6 @@
     ],
     "css": [
         "~/App_Plugins/CustomPlugins/styles.min.css"
-    ]
+    ],
+    "bundleOptions": "None"
  }
