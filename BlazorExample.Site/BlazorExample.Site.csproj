@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="TweetinviAPI" Version="5.0.4" />
         <PackageReference Include="Umbraco.Cms" Version="9.4.3" />
     </ItemGroup>
 
@@ -39,6 +40,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BlazorExample.Components\BlazorExample.Components.csproj" />
+      <ProjectReference Include="..\BlazorExample.Shared\BlazorExample.Shared.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

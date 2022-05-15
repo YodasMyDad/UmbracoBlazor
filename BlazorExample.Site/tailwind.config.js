@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  content: ["Views/**/*.cshtml", "Views/**/*.razor", "Components/**/*.razor"],
+  content: ["Views/**/*.cshtml", "Views/**/*.razor"],
   theme: {
     extend: {}
   },

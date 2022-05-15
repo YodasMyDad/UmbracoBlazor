@@ -5,3 +5,5 @@ riderModule.iml
 /_ReSharper.Caches/
 .vs/
 /.idea/.idea.BlazorExample/.idea/*
+/node_modules/*
+/BlazorExample.sln.DotSettings.user

@@ -1,4 +1,5 @@
 using System;
+using BlazorExample.Shared.Models.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +47,8 @@ namespace BlazorExample.Site
                 .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
             services.AddHttpClient();
+            
+            services.Configure<BlazorExampleAppSettings>(_config.GetSection("BlazorExampleAppSettings"));
         }
 
         /// <summary>

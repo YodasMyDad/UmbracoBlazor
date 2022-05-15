@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Microsoft.AspNetCore.Http.Extensions;
+using BlazorExample.Shared.Models.Config;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Core.Actions;
+using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
@@ -10,10 +10,12 @@ namespace BlazorExample.Site.Controllers.Api;
 public class UtilitiesApiController  : ControllerBase
 {
     private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+    private readonly BlazorExampleAppSettings _blazorExampleAppSettings;
 
-    public UtilitiesApiController(IUmbracoContextAccessor umbracoContextAccessor)
+    public UtilitiesApiController(IUmbracoContextAccessor umbracoContextAccessor, IOptions<BlazorExampleAppSettings> options)
     {
         _umbracoContextAccessor = umbracoContextAccessor;
+        _blazorExampleAppSettings = options.Value;
     }
     
     [HttpGet]
