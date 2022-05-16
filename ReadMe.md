@@ -8,6 +8,16 @@ In addition, if you are a Tailwind Css fan like me. This project shows how to ha
 
 For me. This is a super exciting project, having Blazor running in the Umbraco back office is a game changer. I'm looking for the community to help get involved and fix the current problems and improve the project.
 
+##### Twitter Dashboard
+
+Simple Twitter dashboard that displays the latest tweets from the #umbraco hashtag, build in Blazor. Auto refreshes every 10 seconds to show latest tweets.
+
+You will need to add in your own Twitter API credentials from [https://developer.twitter.com/en/portal/projects-and-apps](https://developer.twitter.com/en/portal/projects-and-apps)
+
+##### Content Dashboard
+
+TODO - Example showing listing/updating umbraco content with Blazor
+
 ## Login Details
 
 Just run the site and login to the back office using the below credentials
@@ -22,7 +32,3 @@ Because the Blazor.Webassembly.js relies on the base url to fetch the blazor.boo
 However, this is working fine for now.
 
 [Read more here](https://github.com/dotnet/aspnetcore/issues/22220)
-
-## Current Problems
-
-This may be a Rider IDE thing or because I'm using Custom Elements. But you can't debug the Blazor files like you would normally in your IDE. Again, looking to the community to help figure it out.
