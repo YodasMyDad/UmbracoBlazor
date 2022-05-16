@@ -15,34 +15,45 @@ public partial class LatestUmbracoTweets : ComponentBase
     private IEnumerable<TweetV2> Tweets { get; set; }
 
     private bool Loading { get; set; }
+    private bool HasSettings { get; set; }
     
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        base.OnInitialized();
+        await base.OnInitializedAsync();
         Tweets = new List<TweetV2>();
         BaseUri = NavigationManager.BaseUri;
         if (BaseUri.Contains("umbraco"))
         {
             BaseUri = BaseUri.Replace("umbraco/", string.Empty);
         }
-        
-        var timer = new Timer(_ =>
+
+        await GetSettingsCheck();
+
+        if (HasSettings)
         {
-
-            InvokeAsync( async ()  =>
+            var timer = new Timer(_ =>
             {
-                 await GetTweets();
-                StateHasChanged();
-            });
-        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
-
+                InvokeAsync( async ()  =>
+                {
+                    await GetTweets();
+                    StateHasChanged();
+                });
+            }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));   
+        }
     }
-    
+
+    private async Task GetSettingsCheck()
+    {
+        var json = await HttpClient.GetStringAsync($"{BaseUri}umbraco/backoffice/api/TwitterApi/HasTwitterSettings");
+        json = json.RemoveUmbracoAngularStartJson();
+        HasSettings = Convert.ToBoolean(json);
+    }
+
     private async Task GetTweets()
     {
         Loading = true;
         StateHasChanged();
-        var json = await HttpClient.GetStringAsync($"{BaseUri}umbraco/backoffice/api/DashboardApi/GetUmbracoTweets");
+        var json = await HttpClient.GetStringAsync($"{BaseUri}umbraco/backoffice/api/TwitterApi/GetUmbracoTweets");
         json = json.RemoveUmbracoAngularStartJson();
         var newTweets = JsonConvert.DeserializeObject<IEnumerable<TweetV2>>(json);
         Tweets = Tweets.Union(newTweets, new TweetComparer()).OrderByDescending(x => x.CreatedAt); 

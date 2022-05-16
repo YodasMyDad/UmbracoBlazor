@@ -1,8 +1,8 @@
 ﻿{
     "dashboards":  [
         {
-            "alias": "UtilityDashboard",
-            "view":  "~/App_Plugins/CustomPlugins/Dashboards/utilitydashboard.html",
+            "alias": "TwitterDashboard",
+            "view":  "~/App_Plugins/CustomPlugins/Dashboards/twitterdashboard.html",
             "sections":  [ "content" ],
             "weight": -10,
             "access": [
@@ -11,7 +11,7 @@
         }
     ],
     "javascript": [
-        "~/App_Plugins/CustomPlugins/Dashboards/dashboard.js",
+        "~/App_Plugins/CustomPlugins/Dashboards/twitterdashboard.js",
         "~/_content/Microsoft.AspNetCore.Components.CustomElements/BlazorCustomElements.js",
         "~/_framework/blazor.webassembly.js"
     ],

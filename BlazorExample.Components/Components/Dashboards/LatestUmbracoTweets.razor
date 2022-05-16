@@ -7,15 +7,22 @@
         <AnimatedSpinner Show="Loading" />
     </div>
 </div>
-
-<div class="tw-space-y-3 space-y-3">
-    @foreach (var tweet in Tweets)
-    {
-        <div class="border tw-border shadow tw-shadow p-2 tw-p-2 bg-gray-50 tw-bg-gray-50">
-            @tweet.Text
-            <div class="pt-1 tw-pt-1">
-                @tweet.AuthorId
+@if (HasSettings)
+{
+    <div class="tw-space-y-3 space-y-3">
+        @foreach (var tweet in Tweets)
+        {
+            <div class="border tw-border shadow tw-shadow p-2 tw-p-2 bg-gray-50 tw-bg-gray-50">
+                @tweet.Text
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>   
+}
+else
+{
+    <div class="prose prose-slate"> 
+        <h3 class="font-semibold">Oh No!</h3>
+        <p>Looks like you haven't added the Twitter API credentials in the appsettings.json.</p>
+        <p>You will need to create a Twitter App via <a href="https://developer.twitter.com/en/portal/projects-and-apps">https://developer.twitter.com/en/portal/projects-and-apps</a></p>
+    </div>
+}
