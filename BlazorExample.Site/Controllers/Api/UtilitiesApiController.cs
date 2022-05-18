@@ -19,14 +19,14 @@ public class UtilitiesApiController  : ControllerBase
     }
     
     [HttpGet]
-    [Route("/Api/UtilitiesApi/GetSiteName")]
-    public string GetSiteName()
+    [Route("/Api/UtilitiesApi/GetWebsiteContent")]
+    public string GetWebsiteContent()
     {
         _umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
         var contentType = umbracoContext.Content.GetContentType("Website");
         var website = umbracoContext.Content.GetByContentType(contentType).FirstOrDefault();
         var websiteModel = website as Website;
-        return websiteModel.WebsiteName;
+        return $"{websiteModel.WebsiteName}. {websiteModel.WebsiteText}";
     }
 
     [HttpGet]

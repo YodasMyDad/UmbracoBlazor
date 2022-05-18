@@ -1,4 +1,15 @@
-﻿{
+﻿{   
+    "propertyEditors": [
+        {
+            "alias": "Suggestions editor",
+            "name": "Suggestions",
+            "icon": "icon-list",
+            "group": "Common",
+            "editor": {
+                "view": "~/App_Plugins/CustomPlugins/PropertyEditors/suggestionsexample.html"
+            }
+        }
+    ],
     "dashboards":  [
         {
             "alias": "TwitterDashboard",
@@ -12,6 +23,7 @@
     ],
     "javascript": [
         "~/App_Plugins/CustomPlugins/Dashboards/twitterdashboard.js",
+        "~/App_Plugins/CustomPlugins/PropertyEditors/suggestionsexample.js",
         "~/_content/Microsoft.AspNetCore.Components.CustomElements/BlazorCustomElements.js",
         "~/_framework/blazor.webassembly.js"
     ],

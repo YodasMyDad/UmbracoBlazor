@@ -33,7 +33,6 @@
 
 
     <ItemGroup>
-      <Folder Include="App_Plugins\CustomPlugins" />
       <Folder Include="wwwroot\css" />
     </ItemGroup>
 

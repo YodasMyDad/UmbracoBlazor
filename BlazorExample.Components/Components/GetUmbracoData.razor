@@ -1,0 +1,10 @@
+﻿<div class="tw-p-2 tw-border tw-rounded tw-space-y-3">
+    <p>@Text</p>
+    <p>Click the button below to get the name of the root node in the backoffice.</p>
+     <p>
+         <button type="button" @onclick="GetWebsiteContent" class="tw-mt-3 tw-w-full tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-border tw-border-transparent tw-shadow-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">
+             Get Data From Umbraco
+         </button>
+     </p>
+     <p>@((MarkupString)WebsiteContent)</p>
+</div>

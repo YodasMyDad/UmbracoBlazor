@@ -1,6 +1,7 @@
 ﻿using BlazorExample.Shared.Comparers;
 using BlazorExample.Shared.Extensions;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using Tweetinvi.Models.V2;
 
@@ -10,6 +11,7 @@ public partial class LatestUmbracoTweets : ComponentBase
 {
     [Inject] public HttpClient HttpClient { get; set; }
     [Inject] public NavigationManager NavigationManager { get; set; }
+    [Inject] public IJSRuntime JS { get; set; }
 
     private string? BaseUri { get; set; }
     private IEnumerable<TweetV2> Tweets { get; set; }
@@ -58,5 +60,6 @@ public partial class LatestUmbracoTweets : ComponentBase
         var newTweets = JsonConvert.DeserializeObject<IEnumerable<TweetV2>>(json);
         Tweets = Tweets.Union(newTweets, new TweetComparer()).OrderByDescending(x => x.CreatedAt); 
         Loading = false;
+        await JS.InvokeVoidAsync("notificationsService.success", "Updated", "latest tweets added");
     }
 }
