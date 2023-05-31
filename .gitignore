@@ -7,3 +7,5 @@ riderModule.iml
 /.idea/.idea.BlazorExample/.idea/*
 /node_modules/*
 /BlazorExample.sln.DotSettings.user
+
+BlazorExample.Site/Smidge/
