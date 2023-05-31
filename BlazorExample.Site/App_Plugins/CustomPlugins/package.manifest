@@ -24,8 +24,8 @@
     "javascript": [
         "~/App_Plugins/CustomPlugins/Dashboards/twitterdashboard.js",
         "~/App_Plugins/CustomPlugins/PropertyEditors/suggestionsexample.js",
-        "~/_content/Microsoft.AspNetCore.Components.CustomElements/BlazorCustomElements.js",
-        "~/_framework/blazor.webassembly.js"
+        "~/_framework/blazor.webassembly.js",
+        
     ],
     "css": [
         "~/App_Plugins/CustomPlugins/styles.min.css"

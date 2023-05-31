@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <DefaultItemExcludes>$(DefaultItemExcludes);App_Plugins/**;</DefaultItemExcludes>
         <DefaultItemExcludes>$(DefaultItemExcludes);umbraco/**;</DefaultItemExcludes>
         <DefaultItemExcludes>$(DefaultItemExcludes);wwwroot/media/**;</DefaultItemExcludes>
@@ -9,15 +9,15 @@
 
     <!-- Force windows to use ICU. Otherwise Windows 10 2019H1+ will do it, but older windows 10 and most if not all winodws servers will run NLS -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.CustomElements" Version="0.1.0-alpha.21466.1" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.CustomElements" Version="7.0.5" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.5" />
         <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
         <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="TweetinviAPI" Version="5.0.4" />
-        <PackageReference Include="Umbraco.Cms" Version="9.4.3" />
+        <PackageReference Include="Umbraco.Cms" Version="11.4.0" />
     </ItemGroup>
 
 
@@ -33,6 +33,7 @@
 
 
     <ItemGroup>
+      <Folder Include="umbraco\config\" />
       <Folder Include="wwwroot\css" />
     </ItemGroup>
 
@@ -40,6 +41,30 @@
     <ItemGroup>
       <ProjectReference Include="..\BlazorExample.Components\BlazorExample.Components.csproj" />
       <ProjectReference Include="..\BlazorExample.Shared\BlazorExample.Shared.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\Breadcrumb.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\EditProfile.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\Empty.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\Gallery.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListAncestorsFromCurrentPage.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListChildPagesFromChangeableSource.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListChildPagesFromCurrentPage.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListChildPagesOrderedByDate.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListChildPagesOrderedByName.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListChildPagesOrderedByProperty.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListChildPagesWithDoctype.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListDescendantsFromCurrentPage.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\ListImagesFromMediaFolder.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\Login.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\LoginStatus.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\MultinodeTree-picker.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\Navigation.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\RegisterMember.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\PartialViewMacros\Templates\SiteMap.cshtml" />
+      <UpToDateCheckInput Remove="umbraco\UmbracoInstall\Index.cshtml" />
     </ItemGroup>
 
     <PropertyGroup>

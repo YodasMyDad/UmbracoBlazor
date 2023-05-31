@@ -30,10 +30,16 @@ public class UtilitiesApiController  : ControllerBase
     }
 
     [HttpGet]
-    [Route("umbraco/_framework/{path}")]
+    [Route("umbraco/_framework/{*path}")]
     public IActionResult GetBlazorFiles([FromRoute]string path)
     {
         return Redirect($"{Request.Scheme}://{Request.Host}/_framework/{path}");
     }
 
+    [HttpGet]
+    [Route("umbraco/_content/{*path}")]
+    public IActionResult GetBlazorContentFiles([FromRoute]string path)
+    {
+        return Redirect($"{Request.Scheme}://{Request.Host}/_content/{path}");
+    }
 }
